@@ -25,7 +25,7 @@ pipeline {
         }
         stage('HTML Validation') {
             steps {
-                echo 'Running HTML Validation...'
+                echo 'Running HTML Validation..'
                 // Validate the index.html file from the subdirectory
                 sh 'tidy -q -e ./files/index.html || echo "HTML issues detected!"'
             }
