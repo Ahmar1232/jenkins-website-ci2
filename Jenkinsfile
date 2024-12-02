@@ -2,9 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Clone Repository') {
-            steps {
-                git url: 'https://github.com/Ahmar1232/jenkins-website-ci2.git', branch: 'main'
-            }
+                dir('files') {
+                        checkout([
+                            $class: 'GitSCM',
+                            branches: [[name: 'main']], // Replace 'main' with your branch name
+                            userRemoteConfigs: [[url: 'https://github.com/Ahmar1232/jenkins-website-ci2.git']]
+                        ])
+                    }
         }
         stage('Make Script Executable') {
             steps {
