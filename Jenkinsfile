@@ -4,7 +4,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                 dir('subDir') {
+                 dir('files') {
                  checkout scm
                     }
                 }
