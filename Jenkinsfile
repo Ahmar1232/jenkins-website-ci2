@@ -4,9 +4,8 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    // Clone the repository into a subdirectory named 'files'
-                    dir('files') {
-                        git url: 'https://github.com/Ahmar1232/jenkins-website-ci2.git', branch: 'main'
+                 dir('subDir') {
+                 checkout scm
                     }
                 }
             }
