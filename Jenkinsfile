@@ -20,7 +20,7 @@ pipeline {
         stage('Build Website') {
             steps {
                 // Run the script after making it executable
-                sh './hello.sh'
+                sh './files/hello.sh'
             }
         }
         stage('HTML Validation') {
